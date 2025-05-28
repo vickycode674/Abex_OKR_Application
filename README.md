@@ -1,6 +1,3 @@
-Sure bro! Here’s a **clean, professional, and clear README.md template** you can use for your OKR app repo. Just replace placeholders where needed and add any project-specific details you want.
-
----
 
 ````markdown
 # MyOKR - Modern OKR Management Application
