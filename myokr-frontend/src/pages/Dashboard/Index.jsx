@@ -44,7 +44,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchSummary = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/dashboard/summary", {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/dashboard/summary`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSummary(res.data);

@@ -17,7 +17,7 @@ const Departments = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get("http://localhost:5000/api/depts", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/depts`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setDepartments(res.data);
@@ -31,7 +31,7 @@ const Departments = () => {
 
   const fetchOrganizations = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/orgs", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/orgs`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setOrganizations(res.data);

@@ -23,7 +23,7 @@ const CreateOKR = () => {
   useEffect(() => {
     const fetchTeams = async () => {
       try {
-        const teamsRes = await axios.get("http://localhost:5000/api/teams", {
+        const teamsRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/teams`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setTeamsList(teamsRes.data);
@@ -38,7 +38,7 @@ const CreateOKR = () => {
     const fetchUsersByTeam = async () => {
       if (team) {
         try {
-          const usersRes = await axios.get(`http://localhost:5000/api/users/team/${team}`, {
+          const usersRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/team/${team}`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           setUsersList(usersRes.data);

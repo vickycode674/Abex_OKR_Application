@@ -20,7 +20,7 @@ const Teams = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get("http://localhost:5000/api/teams", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/teams`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTeams(res.data);
@@ -34,7 +34,7 @@ const Teams = () => {
 
   const fetchDepartments = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/depts", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/depts`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setDepartments(res.data);
@@ -46,7 +46,7 @@ const Teams = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/users", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/users`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data);
@@ -73,7 +73,7 @@ const Teams = () => {
     e.preventDefault();
     setError(null);
     try {
-      await axios.post("http://localhost:5000/api/teams", form, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/teams`, form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setForm({ name: "", department: "" });
@@ -92,7 +92,7 @@ const Teams = () => {
     }
     try {
       await axios.post(
-        "http://localhost:5000/api/teams/add-user",
+        `${import.meta.env.VITE_API_URL}/api/teams/add-user`,
         {
           teamId: selectedTeamId,
           userId: selectedUserId,

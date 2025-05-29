@@ -18,7 +18,7 @@ const OKRList = () => {
   const fetchOKRs = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/okrs", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/okrs`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setOkrs(res.data);
@@ -54,7 +54,7 @@ const OKRList = () => {
   const handleDeleteOKR = async (okrId) => {
     if (window.confirm("Are you sure you want to delete this OKR? This action cannot be undone.")) {
       try {
-        await axios.delete(`http://localhost:5000/api/okrs/${okrId}`, {
+        await axios.delete(`${import.meta.env.VITE_API_URL}/api/okrs/${okrId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         // Filter out the deleted OKR from the current state to update UI immediately
