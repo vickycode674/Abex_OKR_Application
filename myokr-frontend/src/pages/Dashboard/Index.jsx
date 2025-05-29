@@ -70,7 +70,7 @@ const Dashboard = () => {
         <main className="p-6 space-y-6">
           <h2 className="text-3xl font-bold text-gray-800">Welcome back! 👋</h2>
           <p className="text-lg text-indigo-700 font-medium max-w-xl">
-            Your favorite OKR app is here to help you crush your goals and keep your teams aligned 🚀
+            Your favorite OKR app is here to help you to reach goals and keep your teams aligned 🚀
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
             <div className="bg-white p-6 shadow-xl rounded-xl border-t-4 border-blue-500 hover:scale-105 transform transition duration-300">
