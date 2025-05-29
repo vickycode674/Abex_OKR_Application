@@ -9,6 +9,7 @@ import CreateOKR from "./pages/OKRs/CreateOKR";
 import Teams from "./pages/Teams/Teams";
 import Departments from "./pages/Departments/Departments";
 import Organizations from "./pages/Organizations/Organizations";
+import EditOKR from "./pages/OKRs/EditOKR.jsx";
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
           path="/organizations"
           element={<ProtectedRoute><Organizations /></ProtectedRoute>}
         />
+        <Route path="/okr/edit/:id" 
+        element={<ProtectedRoute><EditOKR /></ProtectedRoute>}
+       />
         <Route path="*" element={<Navigate to="/dashboard" />} />
       </Routes>
     </BrowserRouter>

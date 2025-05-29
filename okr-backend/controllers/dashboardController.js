@@ -7,7 +7,7 @@ exports.getSummary = async (req, res) => {
   try {
     const totalOKRs = await OKR.countDocuments();
     const totalTeams = await Team.countDocuments();
-    const activeUsers = await User.countDocuments({ active: true }); // or just all users
+    const activeUsers = await User.countDocuments(); // or just all users
     const totalDepartments = await Department.countDocuments();
 
     res.status(200).json({

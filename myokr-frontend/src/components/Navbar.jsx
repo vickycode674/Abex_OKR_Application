@@ -10,15 +10,15 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-white shadow px-4 py-3 flex justify-between items-center">
-      <h1 className="text-xl font-semibold">OKR Dashboard</h1>
+    <header className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md px-6 py-4 flex justify-between items-center w-full z-50">
+      <h1 className="text-xl md:text-2xl font-bold">🚀 MyOKR Dashboard</h1>
       <button
         onClick={handleLogout}
-        className="bg-red-500 text-white px-4 py-1 rounded"
+        className="bg-white text-red-600 px-4 py-2 rounded-md shadow hover:bg-gray-100 hover:text-red-700 transition duration-200 font-medium"
       >
         Logout
       </button>
-    </div>
+    </header>
   );
 };
 

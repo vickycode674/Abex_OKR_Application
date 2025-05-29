@@ -12,7 +12,9 @@ exports.createTeam = async (req, res) => {
 
 exports.getAllTeams = async (req, res) => {
   try {
-    const teams = await Team.find().populate("department");
+    const teams = await Team.find()
+      .populate("department", "name") // if you want just department name
+      .populate("members", "name email"); // fetch member details
     res.status(200).json(teams);
   } catch (err) {
     res.status(500).json({ error: err.message });

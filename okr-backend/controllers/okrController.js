@@ -20,9 +20,29 @@ exports.getAllOKRs = async (req, res) => {
   }
 };
 
+exports.getOKRById = async (req, res) => {
+  try {
+    const okr = await OKR.findById(req.params.id)
+      .populate("assignedTo", "name email")
+      .populate("team");
+
+    if (!okr) {
+      return res.status(404).json({ error: "OKR not found" });
+    }
+
+    res.status(200).json(okr);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+
 exports.updateOKR = async (req, res) => {
   try {
+    console.log("here is the backend====================")
     const okr = await OKR.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        console.log("here is the backend====================",okr);
+
     res.status(200).json(okr);
   } catch (err) {
     res.status(500).json({ error: err.message });
